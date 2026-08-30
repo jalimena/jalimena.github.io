@@ -210,12 +210,23 @@ section {
 }
 
 
-/* On wide screens, keep the hero bands wide enough for the text but stop them
-   before the portrait. Mobile/tablet retain the existing inset/full-width behavior. */
+/* On wide screens, keep the hero bands close to the width of the text so they
+   do not cover the portrait or too much of the event display. Mobile/tablet retain
+   the existing treatment. */
 @media screen and (min-width: 1300px) {
     .header-content {
         right: auto;
-        width: min(80vw, 1250px);
+        width: clamp(1120px, 64vw, 1200px);
+        max-width: calc(100vw - 2rem);
+    }
+
+    /* Tighter vertical spacing on desktop keeps more of the event display visible. */
+    .title {
+        padding: 0.35rem 1.5rem 0.55rem;
+    }
+
+    .subtitle {
+        padding: 0.7rem 1.5rem 1rem;
     }
 }
 
