@@ -209,6 +209,16 @@ section {
     margin-bottom: 0;
 }
 
+
+/* On wide screens, keep the hero bands wide enough for the text but stop them
+   before the portrait. Mobile/tablet retain the existing inset/full-width behavior. */
+@media screen and (min-width: 1300px) {
+    .header-content {
+        right: auto;
+        width: min(80vw, 1250px);
+    }
+}
+
 @media screen and (max-width: 1000px) {
     body {
         font-size: 14pt;
