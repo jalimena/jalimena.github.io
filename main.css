@@ -24,6 +24,7 @@ h1 {
     margin: 0;
     padding: 0;
     font-size: 2em;
+    line-height: 1;
     font-weight: 400;
     letter-spacing: 0.05em;
 }
@@ -32,6 +33,7 @@ h2 {
     margin: 0;
     padding: 0;
     font-size: 2em;
+    line-height: 1.15;
     text-shadow: 0 0 10px rgba(9, 38, 204, 0.016);
 }
 
@@ -100,19 +102,22 @@ header {
 
 /* Hero text */
 .header-content {
-    position: relative;
+    position: absolute;
+    left: 0;
+    bottom: 0;
     z-index: 3;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding-top: 66vh;
-    padding-left: 3vh;
+    align-items: stretch;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .title {
     display: flex;
     width: 100%;
-    padding: 3vh 1rem;
+    padding: 0.75rem 2rem 0.95rem;
     box-sizing: border-box;
     font-size: 3rem;
     font-weight: 400;
@@ -122,8 +127,8 @@ header {
 }
 
 .subtitle {
-    width: min(900px, 88vw);
-    padding: 1rem;
+    width: 100%;
+    padding: 1.1rem 2rem 1.35rem;
     box-sizing: border-box;
     background-color: burlywood;
     color: black;
@@ -209,10 +214,6 @@ section {
         line-height: 24px;
     }
 
-    .header-content {
-        padding-top: 62vh;
-    }
-
     .title {
         padding-bottom: 1rem;
         font-size: 2rem;
@@ -253,7 +254,8 @@ section {
     }
 
     .header-content {
-        padding-top: 58vh;
+        left: 6vw;
+        width: 94vw;
     }
 
     .title {
@@ -270,17 +272,13 @@ section {
         font-size: 1.2rem;
     }
 
-    .subtitle {
-        width: min(94vw, 900px);
-    }
-
     .hero-tagline {
         margin-top: 0.55rem;
     }
 
     .middleground {
-        object-fit: none;
-        transform: scale(0.5) translateX(40vh) translateY(20vh);
+        object-fit: contain;
+        transform: translateX(30%) translateY(4%) scale(0.78);
         transform-origin: center;
     }
 
@@ -300,7 +298,6 @@ section {
 /* Keep the portrait legible on unusually narrow phone screens. */
 @media screen and (max-width: 340px) {
     .middleground {
-        object-fit: contain;
-        transform: translateX(30%) translateY(4%) scale(0.72);
+        transform: translateX(28%) translateY(4%) scale(0.72);
     }
 }
